@@ -75,21 +75,21 @@ think-build-architect mindset:
 
 THINK:
     component driven design:
-        - modular building blocks that make up interfaces
-        - held together by the layout of the page
-        - reusable across project
-        - independent, allowing us to use them anywhere on the page
+    - modular building blocks that make up interfaces
+    - held together by the layout of the page
+    - reusable across project
+    - independent, allowing us to use them anywhere on the page
     
 BUILD:
     BEM (Block Element Modifier):
-        - BLOCK: standalone component that is meaningful on its own (.block{})    
-        - ELEMENT: part of a block that has no standalone meaning (.block__element{})
-        - MODIFIER: a different version of a block or an element (.block__element--modifier{})
+    - BLOCK: standalone component that is meaningful on its own (.block{})    
+    - ELEMENT: part of a block that has no standalone meaning (.block__element{})
+    - MODIFIER: a different version of a block or an element (.block__element--modifier{})
 
 ARCHITECTURE:
     the 7-1 pattern:
-        - 7 different folders for partial Sass files
-        - 1 main Sass file to import all other files into a ocompiled CSS stylesheet
+    - 7 different folders for partial Sass files
+    - 1 main Sass file to import all other files into a ocompiled CSS stylesheet
 
 
 ## SECTION 4
