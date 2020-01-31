@@ -1,6 +1,6 @@
 # advanced css notes
 
-## section 3
+## SECTION 3
 
 three pillars to write good html and css
 1. responsive design
@@ -92,4 +92,4 @@ ARCHITECTURE:
         - 1 main Sass file to import all other files into a ocompiled CSS stylesheet
 
 
-
+## SECTION 4
