@@ -8,7 +8,6 @@ three pillars to write good html and css
 3. web performance
 
 ### CSS specificity:
-
 1. importance
     - user !important declarations
     - author !important declarations
@@ -26,7 +25,6 @@ three pillars to write good html and css
     - the last declaration in the code overrides other declarations
 
 ### box types:
-
 1. block-level
     - elements formatted visually as blocks
     - 100% of parent's width
@@ -40,7 +38,6 @@ three pillars to write good html and css
     - no height and widths
     - padding and margins only horizontal
 
-
 3. inline-block
     - a mix of block and inline
     - occupies only content's space
@@ -48,7 +45,6 @@ three pillars to write good html and css
     - box-model applies as showed
 
 ### positioning schemes:
-
 1. normal flow
     - dfault positioning scheme
     - NOT floated
@@ -65,38 +61,26 @@ three pillars to write good html and css
     - no impact on surrounding content or elements
     - we use top, bottom, left, right to offset the element from its relatively positioned container
 
-### stacking context:
-
-not just z-index
-
 ### css architecture:
+think-build-architect mindset
 
-think-build-architect mindset:
-
-THINK:
-
-component driven design:
+THINK:  component driven design:
     - modular building blocks that make up interfaces
     - held together by the layout of the page
     - reusable across project
     - independent, allowing us to use them anywhere on the page
     
-BUILD:
-
-BEM (Block Element Modifier):
+BUILD:  BEM (Block Element Modifier):
     - BLOCK: standalone component that is meaningful on its own (.block{})    
     - ELEMENT: part of a block that has no standalone meaning (.block__element{})
     - MODIFIER: a different version of a block or an element (.block__element--modifier{})
 
-ARCHITECTURE:
-
-the 7-1 pattern:
+ARCHITECTURE:   the 7-1 pattern:
     - 7 different folders for partial Sass files
     - 1 main Sass file to import all other files into a ocompiled CSS stylesheet
 
 
 ## SECTION 4
-
 we can have variables in scss
 ```scss 
 $color-primary: #fff;
@@ -109,8 +93,7 @@ nav {
 we use & to attach psuedo-elements to the element it is nested within
 ```scss
 nav {
-    margin: 30px;
-    
+    margin: 30px; 
     &::after {
         content: '';
         clear: both;
@@ -128,10 +111,8 @@ this is an example of a clearfix, which may be reusable. lets put it in a mixin 
         display: table;
     }
 }
-
 nav {
     margin: 30px;
-
     @include clearfix;
 }
 ```
@@ -143,16 +124,13 @@ we can go further with mixins
     text-transform: uppercase;
     color: $col
 }
-
 .btn-main {
     padding: 10px;
     text-align: center;
-
     a:link{
         @include style-link-text($primary-color);
     }
 }
-
 .btn-secondary {
     a:link {
         @include style-link-text($secondary-color);
@@ -165,7 +143,6 @@ we're even able to bring in functions
 @function divide($x, $y) {
     @return $x / $y;
 }
-
 .test {
     margin: divide(60, 2) * 1px // ... * 1px so that it becomes pixels
 }
@@ -179,13 +156,11 @@ placeholders
     text-align: center;
     border-radius: 100px
 }
-
 .btn-main {
     &:link {
         @extend %btn-placeholder
     }
 }
-
 .btn-secondary {
     &:link {
         @extend %btn-placeholder
@@ -193,3 +168,15 @@ placeholders
 }
 ```
 
+## SECTION 5 
+ 
+responsive design principles:
+1. fluid grids and layouts
+    - to allow content to easily adapt to current viewport
+    - uses % rather than px for all layout related lengths
+
+2. flexible/responsive images
+    - images behave differently than text content, so we need to ensure that they also adapt nicely to the current viewport
+
+3. media queries
+    - to change styles on certain viewport widths (breakpoints), allowing us to create different version of site for diff widths
