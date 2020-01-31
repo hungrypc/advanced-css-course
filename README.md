@@ -96,3 +96,100 @@ the 7-1 pattern:
 
 
 ## SECTION 4
+
+we can have variables in scss
+```scss 
+$color-primary: #fff;
+$color-secondary: #eee;
+nav {
+    background-color: $color-primary;
+    color: $color-secondary;
+}
+```
+we use & to attach psuedo-elements to the element it is nested within
+```scss
+nav {
+    margin: 30px;
+    
+    &::after {
+        content: '';
+        clear: both;
+        display: table;
+    }
+}
+```
+
+this is an example of a clearfix, which may be reusable. lets put it in a mixin and include it in nav
+```scss
+@mixin clearfix {
+    &::after {
+        content: '';
+        clear: both;
+        display: table;
+    }
+}
+
+nav {
+    margin: 30px;
+
+    @include clearfix;
+}
+```
+
+we can go further with mixins
+```scss
+@mixin style-link-text($col) {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $col
+}
+
+.btn-main {
+    padding: 10px;
+    text-align: center;
+
+    a:link{
+        @include style-link-text($primary-color);
+    }
+}
+
+.btn-secondary {
+    a:link {
+        @include style-link-text($secondary-color);
+    }
+}
+```
+
+we're even able to bring in functions
+```scss
+@function divide($x, $y) {
+    @return $x / $y;
+}
+
+.test {
+    margin: divide(60, 2) * 1px // ... * 1px so that it becomes pixels
+}
+```
+
+placeholders
+```scss
+%btn-placeholder {
+    padding: 10px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 100px
+}
+
+.btn-main {
+    &:link {
+        @extend %btn-placeholder
+    }
+}
+
+.btn-secondary {
+    &:link {
+        @extend %btn-placeholder
+    }
+}
+```
+
