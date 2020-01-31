@@ -170,7 +170,7 @@ placeholders
 
 ## SECTION 5 
  
-responsive design principles:
+### responsive design principles:
 1. fluid grids and layouts
     - to allow content to easily adapt to current viewport
     - uses % rather than px for all layout related lengths
@@ -180,3 +180,23 @@ responsive design principles:
 
 3. media queries
     - to change styles on certain viewport widths (breakpoints), allowing us to create different version of site for diff widths
+
+### grid 
+select elements that start with "col-"
+```scss
+[class^="col-"] {
+    color: #fff;
+}
+```
+select elements that includes "col"
+```scss
+[class*="col"] {
+    color: #fff;
+}
+```
+select elements that ends with "-col"
+```scss
+[class$="-col"] {
+    color: #fff;
+}
+```
