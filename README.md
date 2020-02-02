@@ -200,3 +200,7 @@ select elements that ends with "-col"
     color: #fff;
 }
 ```
+
+## sibling selectors
++ or ~
+!!! LOOK IT UP !!!
