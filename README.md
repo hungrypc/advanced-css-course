@@ -202,5 +202,7 @@ select elements that ends with "-col"
 ```
 
 ## sibling selectors
-+ or ~
-!!! LOOK IT UP !!!
++ to select the direct next sibling
+~ to select any sibling that isn't directly next 
+
+
