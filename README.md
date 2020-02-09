@@ -201,8 +201,17 @@ select elements that ends with "-col"
 }
 ```
 
-## sibling selectors
+### sibling selectors
 + to select the direct next sibling
 ~ to select any sibling that isn't directly next 
+
+## SECTION 6
+
+### media query
+order of queries important (depending on mobile first vs desktop first)
+
+classic order:
+base + typography > general layout + grid > page layout > comonents
+
 
 
