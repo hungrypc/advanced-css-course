@@ -240,6 +240,18 @@ src="img-nat-1-large.jpg"
 >
 ```
 
+responsive in css:
+can have multiple conditions depending on logic
+```css
+    @media (min-resolution: 192dpi) and (min-width: 600px) {
+        background-image: linear-gradient(to right bottom, 
+        rgba($color-primary-light, 0.8), 
+        rgba($color-primary-dark, 0.8)),
+        url(../img/hero.jpg);
+    }
+```
+
+
 
 
 
