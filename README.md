@@ -282,4 +282,9 @@ watch for change > compile > concat existing css files (need npm i concat) > pre
 
 the last task (build) does all the above (npm i npm-run-all)
 
-
+### identifying touch devices in css
+```scss
+@media only screen and (max-width: 900px), only screen and (hover: none) {
+    // content
+}
+```
