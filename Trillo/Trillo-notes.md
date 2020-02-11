@@ -1,4 +1,4 @@
-#SECTION 7
+# SECTION 7
 
 The element with display: flex = flex container. Elements within flex container = flex items.
 2 axis to remember:
