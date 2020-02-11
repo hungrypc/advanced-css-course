@@ -241,9 +241,12 @@ src="img-nat-1-large.jpg"
 ```
 
 responsive in css:
-can have multiple conditions depending on logic
+can have multiple conditions:
+and = and
+, = or
 ```css
-    @media (min-resolution: 192dpi) and (min-width: 600px) {
+    @media (min-resolution: 192dpi) and (min-width: 600px),
+        (min-width: 2000px) {
         background-image: linear-gradient(to right bottom, 
         rgba($color-primary-light, 0.8), 
         rgba($color-primary-dark, 0.8)),
