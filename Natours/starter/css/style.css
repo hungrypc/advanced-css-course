@@ -639,6 +639,19 @@ body {
     line-height: 1; }
   .popup__close:hover {
     color: #55c57a; }
+  @media (max-width: 37.5em) {
+    .popup__left {
+      width: 100%;
+      display: block;
+      height: 140px; }
+    .popup__right {
+      width: 100%;
+      display: block;
+      padding: 3rem 5rem; }
+    .popup__img {
+      display: inline-block;
+      width: 49.65%;
+      height: 100%; } }
 
 .header {
   height: 95vh;

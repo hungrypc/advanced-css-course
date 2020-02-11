@@ -213,5 +213,33 @@ order of queries important (depending on mobile first vs desktop first)
 classic order:
 base + typography > general layout + grid > page layout > comonents
 
+### responsive images
+density switching:
+instead of src, we use srcset
+```html
+<img srcset="img/logo-1x.png 1x, img/logo-2x.png 2x" alt="logo" >
+```
+
+art direction (using different images depending on screen width):
+use html element < picture >
+```html
+<picture class="footer__logo">
+    <source srcset="img/logo-green-small-1x.png 1x, img/logo-green-small-2x.png 2x" media="(max-width: 600px)"> 
+    <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" alt="logo" >
+</picture>
+```
+
+resolution switching:
+we allow broswer to choose best image for current viewport and piel density situation
+```html
+<img 
+srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w" 
+sizes="(max-width: 900x) 20vw, (max-width: 600px) 30vw, 300px" 
+alt="Photo 1" class="composition__photo composition__photo--p1"
+src="img-nat-1-large.jpg"
+>
+```
+
+
 
 
