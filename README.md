@@ -254,7 +254,32 @@ and = and
     }
 ```
 
+note: safari doesn't support (min-resolution), need to add (-webkit-min-device-pixel-ratio: 2) with what we already have
 
+### feature queries
+if browser supports what's in the (), code applies
+```scss
+@supports(-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+```
+use http://www.caniuse.com to check if certain attributes apply 
 
+### build process
+in package.json:
+```json
+"scripts": {
+    "watch:sass": "node-sass sass/main.scss css/style.css -w",
+    "compile:sass": "node-sass sass/main.scss css/style.comp.css -w",
+    "concat:css": "concat -o css/style.concat.css css/icon-font.css css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.concat.css -o css/style.prefix.css",
+    "compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
+    "build:css": "npm-run-all compile:sass concat:css prefix:css compress:css"
+}
+```
+watch for change > compile > concat existing css files (need npm i concat) > prefix (npm i autoprefixer postcss-cli) > compress
+
+the last task (build) does all the above (npm i npm-run-all)
 
 
